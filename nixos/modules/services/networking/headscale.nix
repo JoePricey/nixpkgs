@@ -431,6 +431,15 @@ in
                   '';
                 };
               };
+
+              only_start_if_oidc_is_available = lib.mkOption {
+                type = lib.types.bool;
+                default = true;
+                description = ''
+                  Block startup until the identity provider is available and healthy.
+                '';
+                example = false;
+              };
             };
 
             tls_letsencrypt_hostname = lib.mkOption {
